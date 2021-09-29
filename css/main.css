@@ -1,0 +1,226 @@
+:root {
+  --ff: "Manrope", Arial, Helvetica, Arial, sans-serif;
+  --primary-color: hsl(217, 19%, 35%);
+  --secondary-color: hsl(214, 17%, 51%);
+  --bgc-primary-color: hsl(212, 23%, 69%);
+  --bgc-secondary-color: hsl(210, 46%, 95%);
+}
+
+*,
+*::after,
+*::before,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 100%;
+  border: none;
+  background: transparent;
+}
+
+html,
+body {
+  font-size: 10px;
+}
+
+img {
+  max-width: 100%;
+}
+
+main {
+  min-height: 100vh;
+  padding: 8em 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bgc-secondary-color);
+}
+
+.card-box {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 2em;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1em;
+
+  box-shadow: 0em 1em 3em hsla(100, 100%, 0%, 0.1);
+
+  max-width: 335px;
+}
+
+.card-box__img-ctn {
+  overflow: hidden;
+  height: 208px;
+}
+
+.card-box__img {
+  margin-top: -1.6em;
+  width: 100%;
+  height: auto;
+}
+
+.card-box__h1,
+.card-box__p {
+  padding: 0px 3rem;
+}
+
+.card-box__h1 {
+  margin: 0;
+  margin-top: 2rem;
+  font-family: var(--ff);
+  font-weight: 700;
+  font-size: 1.7em;
+  line-height: 1.6em;
+  color: var(--primary-color);
+}
+
+.card-box__p {
+  font-family: var(--ff);
+  color: var(--secondary-color);
+  font-weight: 500;
+  font-size: 1.5em;
+  line-height: 1.6em;
+  padding-bottom: 1rem;
+}
+
+.card__person-box {
+  position: relative;
+  display: flex;
+  padding: 1rem 3rem;
+  height: 70px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__person-info-box {
+  display: flex;
+  gap: 1.6em;
+  align-items: stretch;
+}
+
+.card__person-img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.card__person-info {
+  flex: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+
+.card__person-name {
+  font-family: var(--ff);
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.5em;
+}
+
+.card__article-pub-date {
+  font-family: var(--ff);
+  font-weight: 500;
+  color: var(--secondary-color);
+  font-size: 1.4em;
+}
+
+.card__share-icon {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bgc-secondary-color);
+  cursor: pointer;
+  z-index: 999;
+  transition: background-color 1s;
+}
+
+.card__share-icon--active {
+  background-color: var(--secondary-color);
+}
+
+.card__share-icon-img {
+  fill: #6e8098;
+  transition: fill 1s;
+}
+
+.card__share-icon--active svg {
+  fill: #fff;
+}
+
+.card__share-box {
+  position: absolute;
+  bottom: -70px;
+  height: 70px;
+  padding: 1rem 3rem;
+  left: 0px;
+  background-color: var(--primary-color);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  transition: bottom 1s;
+  overflow: hidden;
+}
+
+.card__share-box--show {
+  bottom: 0px;
+}
+
+.card__share-box__social-media-icons {
+  display: flex;
+  gap: 2rem;
+}
+
+.card__share-box__social-media-icon {
+  cursor: pointer;
+}
+
+.card__share-box__para {
+  font-size: 1.4em;
+  color: var(--secondary-color);
+  font-family: var(--ff);
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 1rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+
+@media screen and (min-width: 768px) {
+  .card-box {
+    max-width: 700px;
+    flex-flow: row nowrap;
+    align-items: stretch;
+  }
+
+  .card-box__img-ctn {
+    flex: 1 0 36%;
+    height: unset;
+    overflow: unset;
+  }
+
+  .card-box__img {
+    margin-top: 0;
+  }
+  
+  .card-box__info {
+    flex: 1 0 60%;
+  }
+}
